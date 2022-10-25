@@ -136,4 +136,8 @@ print(customers)
 print(sales) 
 print(thread_sold) 
 
+total_sales = 0
+for sale in sales:
+ total_sales += float(sale.strip("$"))
 
+print(total_sales)
