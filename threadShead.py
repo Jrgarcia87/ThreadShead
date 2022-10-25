@@ -141,3 +141,33 @@ for sale in sales:
  total_sales += float(sale.strip("$"))
 
 print(total_sales)
+#print(thread_sold)
+
+thread_sold_split = []
+
+for color in thread_sold:
+  if "&" in color:
+    thread_sold_split.append(color.split("&"))
+  else:
+    thread_sold_split.append(color)
+
+
+
+print(thread_sold_split)
+
+
+def color_count(color):
+  counter = 0
+  for colors in thread_sold_split:
+    if color in colors:
+      counter += 1
+
+  return(counter)
+
+color_count("white")
+
+colors = ['red', 'yellow', 'green', 'white', 'black', 'blue', 'purple']
+
+for color in colors:
+  print("The thread in the color {color} sold {number} times today!".format(color=color, number=color_count(color)))
+
